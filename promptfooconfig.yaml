@@ -2,39 +2,24 @@
 
 # Learn more about building a configuration: https://promptfoo.dev/docs/configuration/guide
 
-description: "My eval"
+description: "First Prompt Test"
 
 prompts:
-  - "Write a tweet about {{topic}}"
-  - "Write a concise, funny tweet about {{topic}}"
+  - "Answer the following question: {{question}}"
+  - "Answer the following question. I'll tip you $20 for a correct answer: {{question}}"
+  - "Answer the following question. I'll tip you $200 for a correct answer: {{question}}"
+  - "Answer the following question. I won't tip you no matter what: {{question}}"
+
   
 
 providers:
-  - "openai:gpt-4o-mini"
-  - "openai:gpt-4o"
+  - id: "openai:gpt-4o-mini"
+    config:
+      temperature: 1.0
+      max_tokens: 1000
+      apiKeyEnvar: OPENAI_API_KEY
   
 
 tests:
   - vars:
-      topic: bananas
-
-  - vars:
-      topic: avocado toast
-    assert:
-      # For more information on assertions, see https://promptfoo.dev/docs/configuration/expected-outputs
-
-      # Make sure output contains the word "avocado"
-      - type: icontains
-        value: avocado
-
-      # Prefer shorter outputs
-      - type: javascript
-        value: 1 / (output.length + 1)
-
-  - vars:
-      topic: new york city
-    assert:
-      # For more information on model-graded evals, see https://promptfoo.dev/docs/configuration/expected-outputs/model-graded
-      - type: llm-rubric
-        value: ensure that the output is funny
-
+      question: What is true for a type-Ia ("type one-a") supernova? (A) This type occurs in binary systems. (B) This type occurs in young galaxies. (C) This type produces gamma-ray bursts. (D) This type produces high amounts of X-rays.
