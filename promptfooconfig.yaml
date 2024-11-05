@@ -2,13 +2,13 @@
 
 # Learn more about building a configuration: https://promptfoo.dev/docs/configuration/guide
 
-description: "First Prompt Test"
+description: "Second Prompt Test"
 
 prompts:
   - "Answer the following question: {{question}}"
-  - "Answer the following question. I'll tip you $20 for a correct answer: {{question}}"
-  - "Answer the following question. I'll tip you $200 for a correct answer: {{question}}"
-  - "Answer the following question. I won't tip you no matter what: {{question}}"
+  - "Answer the following question. This is very important to my career!: {{question}}"
+  - "You are an expert Astronomer. Answer the following question: {{question}}"
+  - "Answer the following question. Let's think step-by-step: {{question}}"
 
   
 
@@ -23,3 +23,7 @@ providers:
 tests:
   - vars:
       question: What is true for a type-Ia ("type one-a") supernova? (A) This type occurs in binary systems. (B) This type occurs in young galaxies. (C) This type produces gamma-ray bursts. (D) This type produces high amounts of X-rays.
+
+    assert:
+      - type: contains
+        value: (A)
