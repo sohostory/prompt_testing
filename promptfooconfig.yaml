@@ -2,7 +2,7 @@
 
 # Learn more about building a configuration: https://promptfoo.dev/docs/configuration/guide
 
-description: "Second Prompt Test"
+description: "Third Prompt Test"
 
 prompts:
   - "Answer the following question: {{question}}"
@@ -10,7 +10,9 @@ prompts:
   - "You are an expert Astronomer. Answer the following question: {{question}}"
   - "Answer the following question. Let's think step-by-step: {{question}}"
 
-  
+defaultTest:
+  options:
+    provider: openai:gpt-4o-mini
 
 providers:
   - id: "openai:gpt-4o-mini"
@@ -20,11 +22,4 @@ providers:
       apiKeyEnvar: OPENAI_API_KEY
   
 
-tests:
-  - vars:
-      question: What is true for a type-Ia ("type one-a") supernova? (A) This type occurs in binary systems. (B) This type occurs in young galaxies. (C) This type produces gamma-ray bursts. (D) This type produces high amounts of X-rays.
-
-    assert:
-      - type: llm-rubric
-        value: Identifies answer as (A)
-        provider: openai:gpt-4o-mini
+tests: https://docs.google.com/spreadsheets/d/1sakFpeStGwuS0smwUGleA6gavlO1285kBPLmoiUq1aQ/edit?usp=sharing
