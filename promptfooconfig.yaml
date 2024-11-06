@@ -2,13 +2,25 @@
 
 # Learn more about building a configuration: https://promptfoo.dev/docs/configuration/guide
 
-description: "Fourth Prompt Test"
+description: "Fifth Prompt Test"
 
 prompts:
-  - "Answer the following question: {{question}}"
-  - "Answer the following question. This is very important to my career!: {{question}}"
-  - "You are an expert Astronomer. Answer the following question: {{question}}"
-  - "Answer the following question. Let's think step-by-step: {{question}}"
+  - prompt1.yaml
+  - prompt2.yaml
+  - prompt3.yaml
+  - prompt4.yaml
+  - prompt5.yaml
+  - prompt6.yaml
+  - prompt7.yaml
+  - prompt8.yaml
+  - prompt9.yaml
+  - prompt10.yaml
+  - prompt11.yaml
+  - prompt12.yaml
+#  - "Answer the following question: {{question}}"
+#  - "Answer the following question. This is very important to my career!: {{question}}"
+#  - "You are an expert Astronomer. Answer the following question: {{question}}"
+#  - "Answer the following question. Let's think step-by-step: {{question}}"
 
 defaultTest:
   options:
@@ -21,12 +33,6 @@ providers:
       max_tokens: 1000
       apiKeyEnvar: OPENAI_API_KEY
 
-  - id: "anthropic:messages:claude-3-5-haiku-20241022"
-    config:
-      temperature: 1.0
-      max_tokens: 1000
-      apiKeyEnvar: ANTHROPIC_API_KEY
-
   - id: "google:gemini-1.5-pro-latest"
     config:
       temperature: 1.0
@@ -35,4 +41,4 @@ providers:
 
 tests: https://docs.google.com/spreadsheets/d/1sakFpeStGwuS0smwUGleA6gavlO1285kBPLmoiUq1aQ/edit?usp=sharing
 
-outputPath: fourthprompttest_results.csv
+outputPath: fifthprompttest_results.csv
